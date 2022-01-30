@@ -16,7 +16,7 @@ public class MyAccountPage extends BasePage {
     public static final By LOGOUT_BUTTON = By.xpath("//*[@class = 'logout']");
 
     public String getAccountCreatedSuccessfullyMessage(){
-        Waiters.waitForElementLocated(driver,By.xpath("//*[@class = 'alert-success']"),5);
+        Waiters.waitForElementLocated(driver,ACCOUNT_CREATED_SUCCESSFULLY_MESSAGE,5);
         return driver.findElement(ACCOUNT_CREATED_SUCCESSFULLY_MESSAGE).getText();
     }
 

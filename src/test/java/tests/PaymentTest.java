@@ -11,14 +11,15 @@ public class PaymentTest extends BaseTest {
     public void checkoutWithFilledRequiredFields() {
         logInSteps.logIn();
         addFadedShortsToCart.addShorts();
-        cartPage.clickCheckoutButton()
-                .clickAddAddressButton();
-        provideAddressDetailsSteps.fillAllFields();
+        cartPage.clickCheckoutButton();
+        //           .clickAddAddressButton();
+        // provideAddressDetailsSteps.fillAllFields();
         allAddressesPage.clickCheckoutButton()
                 .clickTermsAgreement()
                 .clickProceedToCheckoutButton()
-                .clickPaymentByCardButton()
-                .clickSubmitPaymentButton();
-        Assert.assertEquals(orderConfirmationPage.getConfirmationMessage(), "Ваш заказ http://prestashop.qatestlab.com.ua/ выполнен.", "error");
+                .clickPaymentByCardButton();
+        headerPage.languageChangeToEng();
+        paymentPage.clickSubmitPaymentButton();
+        Assert.assertEquals(orderConfirmationPage.getConfirmationMessage(), "Your order on http://prestashop.qatestlab.com.ua/ is complete.", "error");
     }
 }

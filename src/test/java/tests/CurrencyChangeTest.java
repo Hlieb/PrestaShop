@@ -11,15 +11,17 @@ public class CurrencyChangeTest extends BaseTest {
     @Test(description = "User changes current currency to USD", groups = {"localization"})
     public void changeCurrencyToUsd() {
         mainPage.openPage();
+        headerPage.languageChangeToEng();
         headerPage.currencyChangeToUsd();
-        Assert.assertEquals(headerPage.getCurrentCurrency(), "Валюта : USD", "Error");
+        Assert.assertEquals(headerPage.getCurrentCurrency(), "Currency : USD", "Error");
     }
 
     @Description("This test checks if user could change currency and choose EUR")
     @Test(description = "User changes current currency to EUR", groups = {"localization"})
     public void changeCurrencyToEur() {
         mainPage.openPage();
+        headerPage.languageChangeToEng();
         headerPage.currencyChangeToEur();
-        Assert.assertEquals(headerPage.getCurrentCurrency(), "Валюта : EUR", "Error");
+        Assert.assertEquals(headerPage.getCurrentCurrency(), "Currency : EUR", "Error");
     }
 }

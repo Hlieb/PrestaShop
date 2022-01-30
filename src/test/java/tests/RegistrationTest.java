@@ -12,7 +12,7 @@ public class RegistrationTest extends BaseTest {
     public void fillAllRegistrationFieldsTest() {
         mainPage.openPage()
                 .clickSignInButton()
-                .createAnAccount("glebo@gmail.com")
+                .createAnAccount(createAccountOrSignInPage.generateRandomEmail())
                 .chooseTitleMr()
                 .fillFirstNameField("Hlieb")
                 .fillLastNameField("Boiechko")
@@ -26,7 +26,7 @@ public class RegistrationTest extends BaseTest {
     public void fillOnlyRequiredRegistrationFieldsTest() {
         mainPage.openPage()
                 .clickSignInButton()
-                .createAnAccount("glebtest@gmail.com")
+                .createAnAccount(createAccountOrSignInPage.generateRandomEmail())
                 .fillFirstNameField("Hlieb")
                 .fillLastNameField("Boiechko")
                 .fillPasswordField("14081408")
@@ -39,7 +39,7 @@ public class RegistrationTest extends BaseTest {
     public void fillOnlyNotRequiredRegistrationFieldsTest() {
         mainPage.openPage()
                 .clickSignInButton()
-                .createAnAccount("glb@gmail.com")
+                .createAnAccount(createAccountOrSignInPage.generateRandomEmail())
                 .chooseTitleMr()
                 .clickRegistrationButton();
         Assert.assertEquals(registrationFormPage.getErrorMessage(), "There are 3 errors\n" + "lastname is required.\n" + "firstname is required.\n" + "passwd is required.", "Error" );

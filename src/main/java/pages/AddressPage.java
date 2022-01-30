@@ -4,6 +4,7 @@ import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import utils.Waiters;
 
 @Log4j2
 public class AddressPage extends BasePage{
@@ -21,15 +22,16 @@ public class AddressPage extends BasePage{
     public static final By MOBILE_PHONE_NUMBER_FIELD = By.xpath("//*[@id='phone_mobile']");
     public static final By STATE_FIELD = By.xpath("//*[@id='id_state']");
     public static final By ADDRESS_NAME_FIELD = By.xpath("//*[@id='alias']");
-    public static final By SAVE_BUTTON = By.xpath("//*[@id='submitAddress'[");
+    public static final By SAVE_BUTTON = By.xpath("//*[@id='submitAddress']");
     public static final By CHOOSE_UKRAINE = By.xpath("//*[contains(text(),'Украина')]");
     public static final By CHOOSE_USA = By.xpath("//*[contains(text(),'США')]");
     public static final By CHOOSE_STATE = By.xpath("//*[contains(text(),'Черкасская область')]");
-    public static final By ADD_ADDRESS_BUTTON = By.xpath("//*[@class='address_add submit']");
+    public static final By ADD_ADDRESS_BUTTON = By.xpath("//*[@class='address_add submit']//span");
 
 
     @Step("Filling field '{name}'")
     public AddressPage fillFirstName(String name){
+        Waiters.waitForElementLocated(driver,By.xpath("//*[@id='firstname']"),5);
         log.info("Filling 'Name' field");
         driver.findElement(FIRST_NAME_FIELD).sendKeys(name);
         return this;
@@ -37,6 +39,7 @@ public class AddressPage extends BasePage{
 
     @Step("Click button 'Add address'")
     public AddressPage clickAddAddressButton(){
+        Waiters.waitForElementLocated(driver,By.xpath("//*[@class='address_add submit']//span"),5);
         log.info("Click button 'Add address'");
         driver.findElement(ADD_ADDRESS_BUTTON).click();
         return this;

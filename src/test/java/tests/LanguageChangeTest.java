@@ -11,8 +11,7 @@ public class LanguageChangeTest extends BaseTest {
     public void changeLanguageToUkrainianTest() {
         mainPage.openPage();
         headerPage.languageChangeToUkr();
-        Assert.assertEquals(driver.getCurrentUrl(), "http://prestashop.qatestlab.com.ua/uk/", "Error");
-        Assert.assertEquals(headerPage.getCurrentLanguage(), "Українська", "Error");
+        Assert.assertEquals(mainPage.getCurrentUrl(), "http://prestashop.qatestlab.com.ua/uk/", "Language doesn't change to Ukrainian");
     }
 
     @Description("This test checks if user could change current language to English language")
@@ -20,7 +19,6 @@ public class LanguageChangeTest extends BaseTest {
     public void changeLanguageToEnglishTest() {
         mainPage.openPage();
         headerPage.languageChangeToEng();
-        Assert.assertEquals(driver.getCurrentUrl(), "http://prestashop.qatestlab.com.ua/en/", "Error");
-        Assert.assertEquals(headerPage.getCurrentLanguage(), "English", "Error");
+        Assert.assertEquals(mainPage.getCurrentUrl(), "http://prestashop.qatestlab.com.ua/en/", "Language doesnt change to English");
     }
 }

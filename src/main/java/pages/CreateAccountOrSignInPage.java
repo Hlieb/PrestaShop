@@ -6,6 +6,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import utils.Waiters;
 
+import java.util.Random;
+
 @Log4j2
 public class CreateAccountOrSignInPage extends BasePage {
 
@@ -38,8 +40,17 @@ public class CreateAccountOrSignInPage extends BasePage {
         return new RegistrationFormPage(driver);
     }
 
+    public String generateRandomEmail(){
+        Random random = new Random();
+        String randomCode = String.format("test%2d@test.com", random.nextInt(100));
+        log.info(String.format("Generate random code %s.", randomCode));
+        return randomCode;
+    }
+
+
     @Step("Fill field 'Email' with '{email}'")
     public CreateAccountOrSignInPage fillEmailLogin(String email) {
+        Waiters.waitForElementLocated(driver,LOGIN_EMAIL_FIELD,5);
         log.info("Fill 'Email' field");
         driver.findElement(LOGIN_EMAIL_FIELD).sendKeys(email);
         return this;
