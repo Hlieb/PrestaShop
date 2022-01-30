@@ -26,7 +26,7 @@ public class RegistrationTest extends BaseTest {
     public void fillOnlyRequiredRegistrationFieldsTest() {
         mainPage.openPage()
                 .clickSignInButton()
-                .createAnAccount("gleb@gmail.com")
+                .createAnAccount("glebtest@gmail.com")
                 .fillFirstNameField("Hlieb")
                 .fillLastNameField("Boiechko")
                 .fillPasswordField("14081408")

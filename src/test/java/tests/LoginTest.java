@@ -14,7 +14,7 @@ public class LoginTest extends BaseTest {
                 .fillEmailLogin(EMAIL)
                 .fillPasswordLogin(PASSWORD)
                 .clickLogInButton();
-        Assert.assertEquals(basePage.getCurrentUrl(), "http://prestashop.qatestlab.com.ua/ru/authentication?back=my-account", "Error");
+        Assert.assertEquals(basePage.getCurrentUrl(), "http://prestashop.qatestlab.com.ua/ru/my-account", "Error");
     }
 
     @Description("This test checks if user could login to website with only filled 'Email' field")
