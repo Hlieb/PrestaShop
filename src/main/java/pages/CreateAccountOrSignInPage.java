@@ -42,7 +42,7 @@ public class CreateAccountOrSignInPage extends BasePage {
 
     public String generateRandomEmail(){
         Random random = new Random();
-        String randomCode = String.format("test%2d@test.com", random.nextInt(100));
+        String randomCode = String.format("test%4d@test.com", random.nextInt(10000));
         log.info(String.format("Generate random code %s.", randomCode));
         return randomCode;
     }

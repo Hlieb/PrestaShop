@@ -11,6 +11,6 @@ public class ChangeProductQuantityTest extends BaseTest {
     public void ChangeProductQuantityByButtonTest() {
         addFadedShortsToCart.addShorts();
         cartPage.increaseProductQuantityByButton();
-        Assert.assertEquals(cartPage.getProductQuantityFromMessage(), "2 products", "Error");
+        Assert.assertEquals(cartPage.getProductQuantityFromMessage(), "2 product", "Error");
     }
 }

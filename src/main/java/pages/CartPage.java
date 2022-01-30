@@ -28,7 +28,8 @@ public class CartPage extends BasePage {
     }
 
     public String getProductQuantityFromMessage() {
-        Waiters.waitForElementLocated(driver, By.id("summary_products_quantity"), 5);
+        Waiters.waitForElementLocated(driver, By.id("summary_products_quantity"), 10);
+        Waiters.waitForPageLoaded();
         return driver.findElement(PRODUCTS_QUANTITY_MESSAGE).getText();
     }
 
