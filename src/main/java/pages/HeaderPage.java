@@ -19,8 +19,8 @@ public class HeaderPage extends BasePage {
     public static final By UKRAINIAN_LANGUAGE = By.xpath("//*[@id='languages-block-top']//*[contains(@title,'Ukrainian')]");
     public static final By ENGLISH_LANGUAGE = By.xpath("//*[@id='languages-block-top']//*[contains(text(),'English')]");
     public static final By CURRENCY_CHANGE_BUTTON = By.xpath("//*[@id='currencies-block-top']");
-    public static final By CURRENCY_EURO = By.xpath("//*[@id='currencies-block-top']//*[contains(text(),'Евро')]");
-    public static final By CURRENCY_DOLLAR = By.xpath("//*[@id='currencies-block-top']//*[contains(text(),'Доллар')]");
+    public static final By CURRENCY_EURO = By.xpath("//*[contains(@href,  'javascript:setCurrency(2)')]");
+    public static final By CURRENCY_DOLLAR = By.xpath("//*[contains(@href,  'javascript:setCurrency(3)')]");
     public static final By CURRENT_CURRENCY = By.xpath("//*[@id='currencies-block-top']//*[@class='current']");
 
 
@@ -56,7 +56,7 @@ public class HeaderPage extends BasePage {
     public HeaderPage currencyChangeToUsd() {
         log.info("Click at the 'currency change' button");
         driver.findElement(CURRENCY_CHANGE_BUTTON).click();
-        Waiters.waitForElementLocated(driver,By.xpath("//*[@id='currencies-block-top']//*[contains(text(),'Доллар')]"), 5);
+        Waiters.waitForElementLocated(driver,By.xpath("//*[contains(@href,  'javascript:setCurrency(3)')]"), 5);
         log.info("Click at the 'USD' button");
         driver.findElement(CURRENCY_DOLLAR).click();
         Waiters.waitForElementLocated(driver,By.xpath("//*[@id='currencies-block-top']//*[@class='current']"), 5);
@@ -67,7 +67,7 @@ public class HeaderPage extends BasePage {
     public HeaderPage currencyChangeToEur() {
         log.info("Click at the 'currency change' button");
         driver.findElement(CURRENCY_CHANGE_BUTTON).click();
-        Waiters.waitForElementLocated(driver,By.xpath("//*[@id='currencies-block-top']//*[contains(text(),'Евро')]"), 5);
+        Waiters.waitForElementLocated(driver,By.xpath("//*[contains(@href,  'javascript:setCurrency(2)')]"), 5);
         log.info("Click at the 'EUR' button");
         driver.findElement(CURRENCY_EURO).click();
         Waiters.waitForElementLocated(driver,By.xpath("//*[@id='currencies-block-top']//*[@class='current']"), 5);
