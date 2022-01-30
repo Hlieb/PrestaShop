@@ -28,7 +28,7 @@ public class HeaderPage extends BasePage {
     public HeaderPage languageChangeToUkr() {
         log.info("Click at the 'language change' button");
         driver.findElement(LANGUAGE_CHANGE_BUTTON).click();
-        Waiters.waitForElementLocated(driver,By.xpath("//*[@id='languages-block-top']//*[contains(text(),'Українська')]"), 5);
+        Waiters.waitForElementLocated(driver,By.xpath("//*[@id='languages-block-top']//*[contains(@title,'Ukrainian')]"), 5);
         log.info("Click at the 'Ukrainian language' button");
         driver.findElement(UKRAINIAN_LANGUAGE).click();
         return this;
