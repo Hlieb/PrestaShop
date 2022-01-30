@@ -17,6 +17,9 @@ public class RegistrationFormPage extends BasePage {
     public static final By LAST_NAME = By.id("customer_lastname");
     public static final By PASSWORD = By.id("passwd");
     public static final By REGISTER_BUTTON = By.id("submitAccount");
+    public static final By ERROR_MESSAGE = By.xpath("//*[@class='alert alert-danger']");
+
+
 
     @Step("At the registration form choose title Mr.")
     public RegistrationFormPage chooseTitleMr(){
@@ -61,5 +64,9 @@ public class RegistrationFormPage extends BasePage {
         log.info("Click 'Register' button");
         driver.findElement(REGISTER_BUTTON).click();
         return new MyAccountPage(driver);
+    }
+
+    public String getErrorMessage(){
+        return driver.findElement(ERROR_MESSAGE).getText();
     }
 }

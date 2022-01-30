@@ -32,6 +32,7 @@ public class BaseTest {
     PaymentPage paymentPage;
     OrderConfirmationPage orderConfirmationPage;
     ProvideAddressDetailsSteps provideAddressDetailsSteps;
+    BasePage basePage;
     protected static final String EMAIL = System.getProperty("EMAIL", PropertyReader.getProperty("EMAIL"));
     protected static final String PASSWORD = System.getProperty("PASSWORD", PropertyReader.getProperty("PASSWORD"));
 
@@ -44,6 +45,7 @@ public class BaseTest {
     }
 
     public void initPages() {
+        basePage = new BasePage(driver);
         mainPage = new MainPage(driver);
         createAccountOrSignInPage = new CreateAccountOrSignInPage(driver);
         registrationFormPage = new RegistrationFormPage(driver);

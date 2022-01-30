@@ -36,7 +36,7 @@ public class AddressPage extends BasePage{
     }
 
     @Step("Click button 'Add address'")
-    public AddressPage provideNewShippingAddress(){
+    public AddressPage clickAddAddressButton(){
         log.info("Click button 'Add address'");
         driver.findElement(ADD_ADDRESS_BUTTON).click();
         return this;

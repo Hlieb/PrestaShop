@@ -1,16 +1,18 @@
 package tests;
 
+import io.qameta.allure.Description;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class PaymentTest extends BaseTest {
 
-    @Test
+    @Description("This test checks if user could provide payment")
+    @Test(description = "User fills all fields correctly, and try to pay for his items", groups = {"smoke"})
     public void checkoutWithFilledRequiredFields() {
         logInSteps.logIn();
         addFadedShortsToCart.addShorts();
         cartPage.clickCheckoutButton()
-                .provideNewShippingAddress();
+                .clickAddAddressButton();
         provideAddressDetailsSteps.fillAllFields();
         allAddressesPage.clickCheckoutButton()
                 .clickTermsAgreement()

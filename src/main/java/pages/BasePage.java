@@ -24,4 +24,8 @@ public class BasePage {
     public void openPage(String URL) {
         driver.get(URL);
     }
+
+    public String getCurrentUrl() {
+        return driver.getCurrentUrl();
+    }
 }
