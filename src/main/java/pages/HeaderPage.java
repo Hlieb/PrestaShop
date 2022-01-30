@@ -16,7 +16,7 @@ public class HeaderPage extends BasePage {
 
     public static final By LANGUAGE_CHANGE_BUTTON = By.xpath("//*[@id='languages-block-top']");
     public static final By CURRENT_LANGUAGE = By.xpath("//*[@id='languages-block-top']/*[@class='current']");
-    public static final By UKRAINIAN_LANGUAGE = By.xpath("//*[@id='languages-block-top']//*[contains(text(),'Українська')]");
+    public static final By UKRAINIAN_LANGUAGE = By.xpath("//*[@id='languages-block-top']//*[contains(@title,'Ukrainian')]");
     public static final By ENGLISH_LANGUAGE = By.xpath("//*[@id='languages-block-top']//*[contains(text(),'English')]");
     public static final By CURRENCY_CHANGE_BUTTON = By.xpath("//*[@id='currencies-block-top']");
     public static final By CURRENCY_EURO = By.xpath("//*[@id='currencies-block-top']//*[contains(text(),'Евро')]");
