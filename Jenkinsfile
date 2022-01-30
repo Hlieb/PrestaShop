@@ -22,7 +22,7 @@ pipeline {
 //             sh "mvn clean test"
 
             // To run Maven on a Windows agent, use
-            bat "mvn -Dmaven.test.failure.ignore=true -DEMAIL=${email} -DPASSWORD=${password} -Dfile.encoding=UTF8 clean test"
+            bat "mvn -Dmaven.test.failure.ignore=true -DEMAIL=${email} -DPASSWORD=${password} -Dfile.encoding=UTF-8 clean test"
          }
 
          post {
