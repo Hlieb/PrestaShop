@@ -31,6 +31,9 @@
                     <argLine>
                         -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/1.9.6/aspectjweaver-1.9.6.jar -Xmx256m
                     </argLine>
+                    <encoding>UTF-8</encoding>
+                    <argLine>-Xms256m -Xmx512m -XX:MaxPermSize=128m -ea
+                        -Dfile.encoding=UTF-8</argLine>
                 </configuration>
                 <dependencies>
                     <!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
@@ -47,6 +50,7 @@
                 <version>2.10.0</version>
             </plugin>
         </plugins>
+
     </build>
 
     <dependencies>
