@@ -1,2 +1,11 @@
-# Project exclude paths
+.idea
+.target
+.gitignore
+target
+/resources/
+/allure-results
+./allure-results/*
+src/test/resources/*
+*.iml
+#Project exclude paths
 /target/
