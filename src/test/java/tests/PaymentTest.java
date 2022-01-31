@@ -11,9 +11,9 @@ public class PaymentTest extends BaseTest {
     public void checkoutWithFilledRequiredFields() {
         logInSteps.logIn();
         addFadedShortsToCart.addShorts();
-        cartPage.clickCheckoutButton();
-        //           .clickAddAddressButton();
-        // provideAddressDetailsSteps.fillAllFields();
+        cartPage.clickCheckoutButton()
+                   .clickAddAddressButton();
+        provideAddressDetailsSteps.fillAllFields();
         allAddressesPage.clickCheckoutButton()
                 .clickTermsAgreement()
                 .clickProceedToCheckoutButton()
