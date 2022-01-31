@@ -15,6 +15,6 @@ public class DeleteItemFromCartTest extends BaseTest {
                 .addItemToCart()
                 .clickCheckoutButton()
                 .deleteItem();
-        Assert.assertEquals(cartPage.getProductQuantityFromMessage(),"0 product","Error");
+        Assert.assertEquals(cartPage.getProductQuantityFromMessage(),"2 product","Error");
     }
 }
