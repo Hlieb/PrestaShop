@@ -20,8 +20,8 @@ public class ProvideAddressDetailsSteps {
                 .fillPostCodeField("50555")
                 .fillCityField("Grchkovo")
                 .fillCountryField()
-                .fillHomeNumberField("342324232432")
-                .fillMobileNumberField("32432433324")
+                .fillHomeNumberField("3423247232432")
+                .fillMobileNumberField("324328433324")
                 .fillStateField()
                 .addressName("home")
                 .clickSaveButton();
